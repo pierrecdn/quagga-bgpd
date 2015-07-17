@@ -34,7 +34,13 @@ We need to push capabilities as quagga will modprobe capabilities and try to man
 $ docker run --cap-add NET_ADMIN --cap-add NET_BROADCAST --rm -ti -v bgpd.conf:/etc/quagga/bgpd.conf -p 2605:2605 -p 179:179 pierrecdn/quagga-bgpd
 ```
 
-You may want to expose TCP/2605 port over an administrative network only as it allows remote control on the softrouter. 
+You may want to : 
+* expose TCP/2605 port over an administrative network only as it allows remote control on the softrouter. 
+* import an existing configuration : add a volume by passing 
+
+```sh
+-v /my_dir/bgpd.conf:/etc/quagga/bgpd.conf
+```
 
 #### Configuring at runtime
 
