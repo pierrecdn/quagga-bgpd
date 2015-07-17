@@ -31,7 +31,7 @@ end
 We need to push capabilities as quagga will modprobe capabilities and try to manage some stuff in the network stack. 
 
 ```sh
-$ docker run --cap-add NET_ADMIN --cap-add NET_BROADCAST --rm -ti -v bgpd.conf:/etc/quagga/bgpd.conf -p 2605:2605 -p 179:179 pierrecdn/quagga-bgpd
+$ docker run --cap-add NET_ADMIN --cap-add NET_BROADCAST -d -ti -p 2605:2605 -p 179:179 pierrecdn/quagga-bgpd
 ```
 
 You may want to : 
